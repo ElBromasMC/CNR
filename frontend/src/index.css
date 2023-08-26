@@ -1,0 +1,1485 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* Template */
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+    /* Public Header */
+
+header.public .info {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+    background-color: #033254;
+}
+
+header.public .info div {
+    color: white;
+    font-size: 16px;
+}
+
+header.public .info a {
+    margin-left: 6px;
+    margin-right: 6px;
+    color: white;
+}
+
+header.public .info a:hover {
+    color: gray;
+}
+
+@media (max-width: 72.5em){
+    header.public .info div {
+        display: none;
+    }
+    header.public .info .icons {
+        display: block;
+    }
+    header.public .info .divisor {
+        display: block;
+    }
+    header.public .info .cellphone {
+        display: block;
+    }
+}
+
+@media (max-width: 50em){
+    header.public .info .divisor {
+        display: none;
+    }
+
+    header.public .info .cellphone {
+        display: none;
+    }
+
+}
+
+header.public nav {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 8px 4px -8px #111;
+    z-index: 100;
+}
+
+header.public nav a.linkc {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: #737373;
+    border-bottom: 2px solid #009DE0;
+}
+
+header.public nav a.linkc:hover {
+    color: black;
+}
+
+@media (max-width: 72.5em){
+    header.public nav > div {
+        display: none;
+    }
+
+    header.public nav a.linkc {
+        display: none;
+    }
+}
+
+    /* Public Header */
+
+header.protected .info {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+    background-color: #033254;
+}
+
+header.protected .info div {
+    color: white;
+    font-size: 16px;
+}
+
+header.protected .info a {
+    margin-left: 6px;
+    margin-right: 6px;
+    color: white;
+}
+
+header.protected .info a:hover {
+    color: gray;
+}
+
+@media (max-width: 72.5em){
+    header.protected .info div {
+        display: none;
+    }
+    header.protected .info .icons {
+        display: block;
+    }
+    header.protected .info .divisor {
+        display: block;
+    }
+    header.protected .info .cellphone {
+        display: block;
+    }
+}
+
+@media (max-width: 50em){
+    header.protected .info .divisor {
+        display: none;
+    }
+
+    header.protected .info .cellphone {
+        display: none;
+    }
+
+}
+
+header.protected nav {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px 8px 4px -8px #111;
+    z-index: 100;
+}
+
+header.protected nav .user {
+    display: flex;
+    align-items: center;
+    font-size: 1.25em;
+    gap: 3em;
+}
+
+header.protected nav .user button {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 7px 16px;
+    min-height: 36px;
+    min-width: 36px;
+    width: 100%;
+    color: #ffffff;
+    background: #008060;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+
+header.protected nav .user button:hover {
+    background: #006e52;
+}
+    /* Public Footer */
+
+footer.public {
+    background-image: url("/images/footerimg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+footer.public .info {
+    display: flex;
+    padding: 30px;
+    border-bottom: 1px solid #02201d;
+    gap: 20px;
+    justify-content: center;
+}
+footer.public .info > div {
+    display: flex;
+    flex-basis: 20%;
+    gap: 3px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer.public .info div h5 {
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+footer.public .info div a {
+    color: #A9AEB3;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+footer.public .info div a:hover {
+    color: white;
+}
+
+footer.public .info .social {
+    display: flex;
+    gap: 9px;
+}
+
+footer.public .info .social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #A9AEB3;
+    border-radius: 5px;
+    color: #A9AEB3;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+footer.public .info .social a:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+footer.public .foot {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer.public .foot > * {
+    flex-basis: 13.34%;
+    text-align: center;
+}
+
+footer.public .foot a {
+    color: #A9AEB3;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+footer.public .foot a:hover {
+    color: white;
+}
+
+@media (max-width: 72.5em){
+    footer.public .info {
+        flex-direction: column;
+    }
+}
+@media (max-width: 50em){
+    footer.public .foot {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+}
+
+/* Page Calendar */
+
+
+main.calendario {
+    background-image: url("/images/madera.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+main.calendario .info {
+    background-image: url("/images/madera.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding: 2.5em 0;
+}
+
+main.calendario .info .menu {
+    display: flex;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+    font-size: 45px;
+    align-items: center;
+    font-weight: 800;
+}
+
+main.calendario .info .menu h2 {
+    margin: 0;
+    user-select: none;
+}
+
+main.calendario .info .menu > a {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+main.calendario .info .menu > a:hover {
+    color: black;
+}
+
+main.calendario .info .menu > a.disable {
+    pointer-events: none;
+    color: gray;
+}
+
+main.calendario .info .menu h2 a {
+    color: #D61F21;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+main.calendario .info .menu h2 a:hover {
+    color: #ffffff;
+}
+
+main.calendario .info .menu h2 a.disable {
+    pointer-events: none;
+    color: gray;
+}
+
+main.calendario .info .month {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 35px;
+    font-weight: 700;
+    color: #04AA6D;
+}
+
+main.calendario .calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
+    justify-content: center;
+}
+
+main.calendario .calendar article.card {
+    position: relative;
+    padding: 2rem;
+    min-height: 35em;
+    color: white;
+    padding-bottom: 18em;
+}
+
+main.calendario .calendar article.card:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+    background-color: rgba(0,0,0,0.5);
+}
+
+main.calendario .calendar article.card .content {  
+    position: relative;
+}
+
+main.calendario .calendar article.card.desayuno {  
+    position: relative;
+    background-image: url("/images/desayuno.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+}
+
+main.calendario .calendar article.card.almuerzo {
+    background-image: url("/images/almuerzo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;    
+}
+
+main.calendario .calendar article.card.cena {
+    background-image: url("/images/cena.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;    
+}
+
+main.calendario .calendar article.card .card__title {
+    text-align: center;
+    padding: 5px 0;
+    border-top: 5px solid rgb(100, 100, 100);
+    border-bottom: 5px solid rgb(100, 100, 100);
+}
+
+main.calendario .calendar article.card h3 {
+    display: block;
+    margin: 0;
+    font-size: 36px;
+}
+
+main.calendario .calendar article.card .card__content {
+    display: flex;
+    margin: 1em 0;
+    gap: 1em;
+    flex-direction: column;
+    text-align: left;
+    font-size: 25px;
+}
+
+main.calendario .calendar article.card .card__content div h4 {
+    display: inline;
+    margin: 0;
+}
+
+main.calendario .calendar article.card .card__content div hr {
+    margin-top: 0.3em;
+    color: rgb(112, 112, 112);
+}
+
+
+main.calendario .calendar article.card .card__content div span {
+    font-family: "Pacifico", serif;
+    display: block;
+}
+
+main.calendario .calendar article.card .encuesta {
+    background-color:rgba(83, 193, 237, 0.138);
+    border: 1px solid rgb(26, 117, 208);
+    padding: 1em;
+    border-radius: 1em;
+    position: absolute;
+    width: 80%;
+    bottom: 1.75em;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+main.calendario .calendar article.card .encuesta form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main.calendario .calendar article.card .encuesta form .msg {
+    display: flex;
+    width: 100%;
+}
+
+main.calendario .calendar article.card .encuesta form textarea#msg {
+    font-family: "Open Sans";
+    padding: 0.5em;
+    margin: 1em 0;
+    width: 100%;
+    height: 6em;
+    outline: none;
+    resize: none;
+}
+
+main.calendario .calendar article.card .encuesta form input[type=submit] {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 7px 16px;
+    min-height: 36px;
+    min-width: 36px;
+    width: 100%;
+    color: #ffffff;
+    background: #008060;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+
+main.calendario .calendar article.card .encuesta form input[type=submit]:hover {
+    background: #006e52;
+}
+
+
+.rating {
+    font-size: 1.5em;
+    position: relative;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3em;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.rating__star {
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: filter linear .3s;
+}
+
+.rating__star:hover {
+    filter: drop-shadow(1px 1px 4px gray);
+}
+
+.rating__star.checked {
+    color: #EEE54E;
+}
+
+
+/* Page Admin Calendar */
+
+:root {
+    --calendar-bg-color: #262829;
+    --calendar-font-color: #FFF;
+    --weekdays-border-bottom-color: #404040;
+    --calendar-date-hover-color: #505050;
+    --calendar-prevnext-date-color: #484848
+}
+
+main.calendar .app__content {
+    padding: 0 clamp(1em, 15%, 10em);
+    background-color: #b2d2c3;
+    display: flex;
+    justify-content: center;
+}
+
+main.calendar .app__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 152);
+    color: white;
+    padding: 2.5em 0;
+    text-align: center;
+    font-size: clamp(0.75em, 1.25vw, 1.5em);
+}
+
+main.calendar .app__title > h1 {
+    display: block;
+    margin: 0;
+}
+
+main.calendar .app__title > a {
+    display: block;
+    color: white;
+    margin-right: 1em;
+    font-size: 1.5em
+}
+
+main.calendar .app__title > a:hover {
+    color: black;
+}
+
+    /* Alerta */
+
+.alert {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    min-width: max(25%, 18em);
+    padding: 20px;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+}
+
+.alert .close {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.alert .close:hover,
+.alert .close:focus {
+    color: black;
+}
+
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+.alert.error {background-color: #f44336;}
+.alert.success {background-color: #04AA6D;}
+
+@media (max-width: 72.5em){
+    main.calendar .app__content {
+        padding: 0;
+    }    
+}
+
+@media (max-width: 50em){
+    main.calendar .app__content {
+        flex-direction: column;
+        padding: 0 10%;
+    }    
+}
+
+@media (max-width: 32.5em){
+    main.calendar .app__content {
+        padding: 0;
+    }  
+}
+
+
+    /* Calendario */
+
+main.calendar .calendar {
+    user-select: none;
+    display: flex;
+    flex-basis: 50%;
+    justify-content: center;
+    background: var(--calendar-bg-color);
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--calendar-font-color);
+    padding: 2em;
+    flex-direction: column;
+}
+
+main.calendar .calendar .calendar__head {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    margin: 0.5em 0;
+    font-weight: 600;
+    font-size: 2.25vw;
+}
+
+@media (max-width: 72.5em){
+    main.calendar .calendar .calendar__head {
+        font-size: 3.25vw;
+    }  
+}
+
+@media (max-width: 50em){
+    main.calendar .calendar .calendar__head {
+        font-size: 5vw;
+    }    
+}
+
+@media (max-width: 32.5em){
+    main.calendar .calendar .calendar__head {
+        font-size: 6vw;
+    }  
+}
+
+main.calendar .calendar .calendar__head div>a {
+    cursor: pointer;
+}
+
+main.calendar .calendar .calendar__body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-size: 1.75vw;
+    text-align: center;
+}
+
+@media (max-width: 72.5em){
+    main.calendar .calendar .calendar__body {
+        font-size: 2.25vw;
+    }  
+}
+
+@media (max-width: 50em){
+    main.calendar .calendar .calendar__body {
+        font-size: 3.5vw;
+    }    
+}
+
+@media (max-width: 32.5em){
+    main.calendar .calendar .calendar__body {
+        font-size: 4.5vw;
+    }  
+}
+
+
+main.calendar .calendar .calendar__body div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    padding: 0.2em;
+}
+
+main.calendar .calendar .calendar__body div:nth-child(-n+7) {
+    border-bottom: 1px solid var(--weekdays-border-bottom-color);
+    font-weight: 500;
+}
+
+main.calendar .calendar .calendar__body div>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-basis: 100%;
+    aspect-ratio: 1;
+    color: var(--calendar-font-color);
+    text-decoration: none;
+}
+
+main.calendar .calendar .calendar__body div>a:hover {
+    outline: 1px solid var(--calendar-date-hover-color);
+    border-radius: 50%;
+}
+
+main.calendar .calendar .calendar__body div.pndate>a {
+    color: var(--calendar-prevnext-date-color);
+}
+
+main.calendar .calendar .calendar__body div.exists>a {
+    background-color: green;
+    border-radius: 50%;
+}
+
+main.calendar .calendar .calendar__body div.clicked>a {
+    background-color: red;
+    border-radius: 50%;
+}
+
+main.calendar article.card {
+    grid-area: menu;
+    padding: 2rem;
+    background-color: #f0b50c;
+}
+
+    /* Menú */
+
+main.calendar article.card {
+    flex-basis: 50%;
+}
+
+main.calendar article.card form {
+    padding-bottom: 5em;
+    position: relative;
+}
+
+main.calendar article.card .card__title {
+    text-align: center;
+    padding: 0.3em 0;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+}
+
+main.calendar article.card .card__title h3 {
+    display: block;
+    margin: 0;
+    font-size: 3vw;
+}
+
+@media (max-width: 72.5em){
+    main.calendar article.card .card__title h3 {
+        font-size: 4.25vw;
+    } 
+}
+
+@media (max-width: 50em){
+    main.calendar article.card .card__title h3 {
+        font-size: 6.5vw;
+    }   
+}
+
+@media (max-width: 32.5em){
+    main.calendar article.card .card__title h3 {
+        font-size: 8vw;
+    }
+}
+
+main.calendar article.card .card__title h3.modified {
+    color: red;
+}
+
+main.calendar article.card .card__content {
+    display: flex;
+    margin: 1em 0;
+    gap: 1em;
+    flex-direction: column;
+    text-align: left;
+    font-size: 1.875vw;
+}
+
+@media (max-width: 72.5em){
+    main.calendar article.card .card__content {
+        font-size: 2.65vw;
+    }    
+}
+
+@media (max-width: 50em){
+    main.calendar article.card .card__content {
+        font-size: 4vw;
+    }  
+}
+
+@media (max-width: 32.5em){
+    main.calendar article.card .card__content {
+        font-size: 5vw;
+    }
+}
+
+main.calendar article.card .card__content div h4 {
+    display: block;
+    margin: 0;
+}
+
+main.calendar article.card .card__content div .field__content {
+    display: flex;
+    align-items: center;
+}
+
+main.calendar article.card .card__content div .field__content > div {
+    width: 100%;
+}
+
+main.calendar article.card .card__content div .field__content .open {
+    color: #aaaaaa;
+    font-size: 1.5em;
+    margin-left: 0.3em;
+    font-weight: bold;
+}
+  
+main.calendar article.card .card__content div .field__content .open:hover,
+main.calendar article.card .card__content div .field__content .open:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+main.calendar article.card .card__buttons {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin: 1em 0;
+    gap: 1em;
+}
+
+main.calendar article.card .card__buttons input {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 7px 16px;
+    min-height: 36px;
+    min-width: 36px;
+    width: 50%;
+    color: #ffffff;
+    background: #008060;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+
+main.calendar article.card .card__buttons input:only-child {
+    width: 100%;
+}
+
+main.calendar article.card .card__buttons input:hover {
+    background: #006e52;
+}
+
+main.calendar article.card .card__buttons input:disabled,
+main.calendar article.card .card__buttons input[disabled] {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+
+
+    /* Meals */
+
+main.calendar .meal {
+    margin-top: 2em;
+    display: flex;
+    background-color: #333;
+}
+
+main.calendar .meal a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 3em;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+
+main.calendar .meal a:hover:not(.clicked) {
+    background-color: #111;
+}
+
+main.calendar .meal a.clicked {
+    background-color: #04AA6D;
+    pointer-events: none;
+    cursor: auto;
+}
+
+
+    /* PopUp */
+
+.popup {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup .popup__content {
+    padding: 1em;
+    background-color: #fefefe;
+    border-radius: 1em;
+    width: clamp(20em, 35%, 35em);
+}
+
+.popup .popup__content .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+  
+.popup .popup__content .close:hover,
+.popup .popup__content .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup .popup__content .content {
+    border: 1px solid black;
+    padding: 1em;
+}
+
+.popup .popup__content .content h2 {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.popup .popup__content .content .options {
+    display: flex;
+    background-color: #333;
+}
+
+.popup .popup__content .content .options a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 3em;
+    width: 100%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.popup .popup__content .content .options a:hover:not(.active) {
+    background-color: #111;
+}
+
+.popup .popup__content .content .options a.active {
+    background-color: #04AA6D;
+    pointer-events: none;
+    cursor: auto;
+}
+
+        /* Form create */
+        
+main.calendar .popup .popup__content .content .create {
+    position: relative;
+    min-height: 10em;
+    margin: 1em 0em;
+}
+
+main.calendar .popup .popup__content .content .create input[type=text] {
+    width: 100%;
+    padding: 0.5em 1.25em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+main.calendar .popup .popup__content .content .create .botton {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+main.calendar .popup .popup__content .content .create input[type=submit] {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 7px 16px;
+    min-height: 36px;
+    min-width: 36px;
+    width: 100%;
+    color: #ffffff;
+    background: #008060;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+main.calendar .popup .popup__content .content .create input[type=submit]:hover {
+    background: #006e52;
+}
+
+        /* Form update */
+
+main.calendar .popup .popup__content .content .update {
+    position: relative;
+    min-height: 10em;
+    margin: 1em 0em;
+}
+
+main.calendar .popup .popup__content .content .update input[type=text] {
+    width: 100%;
+    padding: 0.5em 1.25em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin: 1em 0;
+}
+
+main.calendar .popup .popup__content .content .update .botton {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+main.calendar .popup .popup__content .content .update input[type=submit] {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 7px 16px;
+    min-height: 36px;
+    min-width: 36px;
+    width: 100%;
+    color: #ffffff;
+    background: #008060;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+main.calendar .popup .popup__content .content .update input[type=submit]:hover {
+    background: #006e52;
+}
+
+        /* Form delete */
+
+main.calendar .popup .popup__content .content .delete {
+    position: relative;
+    min-height: 10em;
+    margin: 1em 0em;
+}
+
+        /* Confirm */
+
+.confirm {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.confirm .popup__content {
+    padding: 1em;
+    background-color: #fefefe;
+    border-radius: 1em;
+    width: clamp(20em, 35%, 35em);
+}
+
+.confirm .popup__content .content {
+    border: 1px solid black;
+    padding: 1em;
+}
+
+.confirm .popup__content .content h2 {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+.confirm .options {
+    display: flex;
+    width: 100%;
+    margin: 1em 0;
+    gap: 1em;
+}
+
+.confirm .options a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 5px 12px;
+    min-height: 36px;
+    min-width: 36px;
+    width: 50%;
+    color: #ffffff;
+    background: #008060;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+ 
+.confirm .options a:hover {
+    background: #006e52;
+}
+
+    /* Page Login */
+main.login {
+    display: flex;
+    background-color: #DDE5F4;
+    justify-content: center;
+    align-items: center;
+}
+
+main.login .login-panel {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 5em 0;
+    background-color: #F1F7FE;
+    width: 20em;
+    border: 1px solid black;
+    border-radius: 1.5em;
+    padding: 0 3em;
+}
+
+main.login .login-panel .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main.login .login-panel .login__title {
+    margin: 0.5em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #3D4785;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    color: #3D4785;
+    font-size: 5em;
+    width: 2em;
+}
+
+main.login .login-panel .login__form {
+    height: 20em;
+}
+
+main.login .login-panel .login__form .login__form__input {
+    padding: 1em;
+    margin: 1.5em 0;
+    background-color: white;
+    border-radius: 1em;
+}
+
+main.login .login-panel .login__form .login__form__input .input {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+main.login .login-panel .login__form .login__form__input > div {
+    color: #555555;
+}
+
+main.login .login-panel .login__form .login__form__input .input > input {
+    width: 94%;
+    border: none;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+main.login .login-panel .login__form .login__form__input .input > input:focus {
+    outline:none!important;
+}
+
+main.login .login-panel .login__form form > input {
+    width: 100%;
+    height: 2.5em;
+    background-color: #3E4684;
+    color: white;
+    border: none;
+    border-radius: 1em;
+}
+
+main.login .login-panel .login__form form > input:hover {
+    background-color: #373e74;
+}
+
+/* Admin Page */
+
+main.admin-page {
+    display: flex;
+    justify-content: center;
+    background-color: #909090;
+}
+
+main.admin-page .admin {
+    width: 80%;
+    background-color: #5E5E5E;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+main.admin-page .admin .admin__title {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    margin: 1.5rem 0;
+}
+
+main.admin-page .admin .admin__tools {
+    display: grid;
+    gap: 2rem;
+    grid-auto-rows: 35rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+main.admin-page .admin .admin__tools .admin__tools__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+main.admin-page .admin .admin__tools .admin__tools__item:hover {
+    background-color: rgb(186, 186, 186);
+}
+
+main.admin-page .admin .admin__tools .admin__tools__item > * {
+    display: block;
+}
+
+main.admin-page .admin .admin__tools .admin__tools__item > i {
+    font-size: 8em;
+    margin-bottom: 1rem;
+}
+
+main.admin-page .admin .admin__tools .admin__tools__item > span {
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+main.encuestas {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #B2D2C3;
+}
+
+main.encuestas .app__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 152);
+    color: white;
+    padding: 2.5em 0;
+    text-align: center;
+    font-size: clamp(0.75em, 1.25vw, 1.5em);
+}
+
+main.encuestas .app__title > h1 {
+    display: block;
+    margin: 0;
+}
+
+main.encuestas .app__title > a {
+    display: block;
+    color: white;
+    margin-right: 1em;
+    font-size: 1.5em
+}
+
+main.encuestas .app__title > a:hover {
+    color: black;
+}
+
+main.encuestas .app__content {
+    margin: 0 15%;
+    background-color: white;
+}
+
+main.encuestas .app__content .selector {
+    display: flex;
+    flex-direction: column;
+}
+
+main.encuestas .app__content .selector .date {
+    background-color: #262829;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    font-weight: 600;
+    font-size: 3.25vw;
+    padding: 0.75em 20%;
+}
+
+main.encuestas .app__content .testimonials {
+    display: flex;
+    flex-direction: column;
+    margin: 5em 10%;
+}
+
+main.encuestas .app__content .testimonials .testimonials__head {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+main.encuestas .app__content .testimonials .testimonials__head .dBotton {
+    display: flex;
+    justify-content: right;
+}
+
+main.encuestas .app__content .testimonials .testimonials__head button {
+    display: inline-block;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    border: 0;
+    padding: 7px 16px;
+    min-height: 36px;
+    min-width: 36px;
+    width: 10em;
+    color: #ffffff;
+    background: #008060;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.2) 0px -1px 0px 0px inset;
+}
+
+main.encuestas .app__content .testimonials .testimonials__head button:hover {
+    background: #006e52;
+}
+
+main.encuestas .app__content .testimonials .testimonials__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main.encuestas .app__content .testimonials .testimonials__body table.testimonial__table {
+    border-collapse: collapse;
+    font-size: 2vw;
+    font-family: sans-serif;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+main.encuestas .app__content .testimonials .testimonials__body table.testimonial__table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+main.encuestas .app__content .testimonials .testimonials__body table.testimonial__table th,
+main.encuestas .app__content .testimonials .testimonials__body table.testimonial__table td {
+    padding: 12px 15px;
+}
+
+main.encuestas .app__content .testimonials .testimonials__body table.testimonial__table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+main.encuestas .app__content .testimonials .testimonials__body table.testimonial__table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+main.encuestas .app__content .testimonials .testimonials__body table.testimonial__table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+@media (max-width: 50em){
+    main.encuestas .app__content {
+        margin: 0 10%;
+        background-color: white;
+    }
+    main.encuestas .app__content .selector .date  {
+        font-size: 4.25vw;
+        padding: 0.75em 15%;
+    }
+    main.encuestas .app__content .testimonials {
+        display: flex;
+        flex-direction: column;
+        margin: 3em 10%;
+    }
+    main.encuestas .app__content .testimonials .testimonials__body table.testimonial__table {
+        border-collapse: collapse;
+        font-size: 2.75vw;
+        font-family: sans-serif;
+        width: 100%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@media (max-width: 32.5em){
+    main.encuestas .app__content {
+        margin: 0;
+        background-color: white;
+    }
+    main.encuestas .app__content .selector .date  {
+        font-size: 5.5vw;
+        padding: 0.75em 15%;
+    }
+    main.encuestas .app__content .testimonials {
+        display: flex;
+        flex-direction: column;
+        margin: 3em 5%;
+    }
+    main.encuestas .app__content .testimonials .testimonials__body table.testimonial__table {
+        border-collapse: collapse;
+        font-size: 3.5vw;
+        font-family: sans-serif;
+        width: 100%;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+}
