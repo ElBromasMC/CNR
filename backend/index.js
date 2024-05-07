@@ -16,23 +16,13 @@ dotenv.config();
 
 // Database conection
 db.authenticate()
-    .then( () => console.log('Base de datos conectada') )
-    .catch( error => console.log(error) )
-
-// Destructive create database
-
-/*
-db.sync({ force: true })
-    .then( () => console.log('Base de datos reconfigurada') )
-    .catch( error => console.log(error) )
-*/
-
+    .then(() => console.log('Base de datos conectada'))
+    .catch(error => console.log(error))
 
 const allowedDomains = [process.env.FRONTEND_URL];
 
-
 const corsOptions = {
-    origin: function(origin, callback) {
+    origin: function (origin, callback) {
         if (allowedDomains.indexOf(origin) !== -1) {
             callback(null, true);
         } else {

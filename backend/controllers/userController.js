@@ -3,18 +3,18 @@ import { Group } from "../models/Group.js";
 import generateID from "../helpers/generateID.js"
 import generateJWT from "../helpers/generateJWT.js"
 
-const register = async (req, res) =>{
+const register = async (req, res) => {
     const { email, name, password } = req.body;
-    
+
     // Check not null
-    if (!email || !name || !password){
+    if (!email || !name || !password) {
         const error = new Error("Debe ingresar los siguientes campos: email, name, password");
         return res.status(400).json({ msg: error.message });
     }
 
     // Check duplicate email
     const userExists = await User.findOne({
-        where: {email}
+        where: { email }
     });
     if (userExists) {
         const error = new Error("Usuario ya registrado");
@@ -23,14 +23,14 @@ const register = async (req, res) =>{
 
     try {
         // Save new user
-        const user = new User(req.body, {
-            fields: ["name", "email", "password", "phone"]
+        const user = new User({ ...req.body, token: generateID() }, {
+            fields: ["name", "email", "password", "phone", "token"]
         });
         await user.save();
 
     } catch {
         const error = new Error("Error desconocido al registrar el usuario");
-        return res.status(400).json({ msg: error.message});
+        return res.status(400).json({ msg: error.message });
     }
 
     try {
@@ -38,7 +38,7 @@ const register = async (req, res) =>{
 
     } catch {
         const error = new Error("Error desconocido al enviar el correo de verificación");
-        return res.status(400).json({ msg: error.message});
+        return res.status(400).json({ msg: error.message });
     }
 
     res.json({
@@ -70,7 +70,7 @@ const confirm = async (req, res) => {
         userConfirm.confirmed = true;
         await userConfirm.save();
         res.json({ msg: "Usuario confirmado correctamente" });
-    } catch(e) {
+    } catch (e) {
         const error = new Error("Error desconocido al confirmar el usuario");
         console.log(e)
         return res.status(400).json({ msg: error.message });
@@ -81,7 +81,7 @@ const authenticate = async (req, res) => {
     const { email, password } = req.body;
 
     // Check not null
-    if (!email || !password){
+    if (!email || !password) {
         const error = new Error("Debe ingresar los siguientes campos: email, password");
         return res.status(400).json({ msg: error.message });
     }
@@ -97,8 +97,8 @@ const authenticate = async (req, res) => {
 
     // Check user confiramation
     if (!user.confirmed) {
-      const error = new Error("El usuario no ha sido confirmado");
-      return res.status(403).json({ msg: error.message });
+        const error = new Error("El usuario no ha sido confirmado");
+        return res.status(403).json({ msg: error.message });
     }
 
     // Check password
@@ -109,7 +109,7 @@ const authenticate = async (req, res) => {
 
     // Auth
     res.json({
-    token: generateJWT(user.id),
+        token: generateJWT(user.id),
     });
 };
 

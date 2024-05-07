@@ -36,14 +36,14 @@ const getMenus = async (req, res) => {
 */
 const getMenus = async (req, res) => {
     let menu;
-    try{
+    try {
         menu = await Menu.findAll({
-            attributes: {exclude: ["date", "organizationId", "mealId"]},
+            attributes: { exclude: ["date", "organizationId", "mealId"] },
             include: [
                 {
                     model: Content,
-                    attributes: {exclude: ["name"]},
-                    through: {attributes: []},
+                    attributes: { exclude: ["name"] },
+                    through: { attributes: [] },
                 },
             ],
         });
@@ -68,9 +68,9 @@ const getMenu = (req, res) => {
     const [date, organizationId] = props(["date", "organizationId"])(req.params)
     const abc = date => organizationId => AsyncIO.of(
         () => Menu.findAll({
-            where: {date, organizationId},
-            attributes: {exclude: ["date", "organizationId"]},
-            include: [{model: Content, attributes: {exclude: ["id"]}, through: {attributes: []}}],
+            where: { date, organizationId },
+            attributes: { exclude: ["date", "organizationId"] },
+            include: [{ model: Content, attributes: { exclude: ["id"] }, through: { attributes: [] } }],
         })
     )
     const menu = Maybe.pure(abc)
@@ -80,16 +80,16 @@ const getMenu = (req, res) => {
         .fmap(Maybe.join)
         .toMaybeA()
 
-    menu.fromPromise(x => res.json(x), () => res.status(400).json({ msg: "El perros gato" }))
+    menu.fromPromise(x => res.json(x), () => res.status(400).json({ msg: "No encontrado" }))
 }
 
 
 // Get Dom
 const getDomMenus = async (req, res) => {
     let menu;
-    try{
+    try {
         menu = await Menu.findAll({
-            attributes: {exclude: []},
+            attributes: { exclude: [] },
         });
     } catch {
         const error = new Error("Error desconocido al obtener los menús");
@@ -102,32 +102,32 @@ const getDomMenus = async (req, res) => {
 
 // Add menu
 const addMenu = async (req, res) => {
-    const {date, organizationId, mealId} = req.body;
-    if (!date && !organizationId && !mealId){
+    const { date, organizationId, mealId } = req.body;
+    if (!date && !organizationId && !mealId) {
         const error = new Error("Debe ingresar los siguientes campos: date, organizationId, mealId");
         return res.status(400).json({ msg: error.message });
     }
-    const menuExists = await Menu.findOne({where: {date, organizationId, mealId,}});
+    const menuExists = await Menu.findOne({ where: { date, organizationId, mealId, } });
     if (menuExists) {
         const error = new Error("Menú ya registrado");
         return res.status(400).json({ msg: error.message });
     }
     let menuSaved;
     try {
-        const menu = new Menu(req.body, {fields: ["date", "organizationId", "mealId"]});
+        const menu = new Menu(req.body, { fields: ["date", "organizationId", "mealId"] });
         menuSaved = await menu.save();
     } catch {
         const error = new Error("Error desconocido al registrar el menú");
         return res.status(400).json({ msg: error.message });
     }
     const { contents } = req.body;
-    if (!contents){
+    if (!contents) {
         const error = new Error("Debe ingresar los siguientes campos: menuContents");
         return res.status(400).json({ msg: error.message });
     }
     if (!Array.isArray(contents)) {
         const error = new Error("Formato inválido en menuContents");
-        return res.status(400).json({ msg: error.message});
+        return res.status(400).json({ msg: error.message });
     }
     await Promise.all(contents.map(async (c) => {
         try {
@@ -139,8 +139,8 @@ const addMenu = async (req, res) => {
         }
     }));
     let newMenu;
-    try{
-        newMenu = await Menu.findByPk(menuSaved.id, {include: [{model: Content, attributes: {exclude: ["name"]}, through: {attributes: []}}]});
+    try {
+        newMenu = await Menu.findByPk(menuSaved.id, { include: [{ model: Content, attributes: { exclude: ["name"] }, through: { attributes: [] } }] });
     } catch {
         const error = new Error("Error desconocido al obtener el menú");
         return res.status(400).json({ msg: error.message });
@@ -187,7 +187,7 @@ const updateMenu = async (req, res) => {
     // Menu contents
     const { contents } = req.body;
     // Check if not null
-    if (!contents){
+    if (!contents) {
         const error = new Error("Debe ingresar los siguientes campos: menuContents");
         return res.status(400).json({ msg: error.message });
     }
@@ -214,13 +214,13 @@ const updateMenu = async (req, res) => {
 
     let newMenu;
 
-    try{
+    try {
         newMenu = await Menu.findByPk(menu.id, {
             include: [
                 {
                     model: Content,
-                    attributes: {exclude: ["name"]},
-                    through: {attributes: []},
+                    attributes: { exclude: ["name"] },
+                    through: { attributes: [] },
                 }
             ],
         });
@@ -228,7 +228,7 @@ const updateMenu = async (req, res) => {
         const error = new Error("Error desconocido al actualizar el menú");
         return res.status(400).json({ msg: error.message });
     }
-    
+
     return res.json(newMenu);
 };
 
@@ -250,13 +250,13 @@ const removeMenu = (req, res) => {
 // Get contents
 const getContents = async (req, res) => {
     let content;
-    try{
+    try {
         content = await Type.findAll({
-            attributes: {exclude: ["name"]},
+            attributes: { exclude: ["name"] },
             include: [
                 {
                     model: Content,
-                    attributes: {exclude: ["typeId"]},
+                    attributes: { exclude: ["typeId"] },
                 }
             ],
         });
@@ -271,13 +271,13 @@ const getContents = async (req, res) => {
 const getContent = async (req, res) => {
     const { id } = req.params;
     let content;
-    try{
+    try {
         content = await Content.findByPk(id);
     } catch {
         const error = new Error("Error desconocido al obtener el contenido");
         return res.status(400).json({ msg: error.message });
     }
-    if(!content){
+    if (!content) {
         const error = new Error("Contenido no encontrado");
         return res.status(404).json({ msg: error.message });
     }
@@ -327,22 +327,22 @@ const getContent = async (req, res) => {
 //         const error = new Error("Error desconocido al obtener el contenido");
 //         return res.status(400).json({ msg: error.message });
 //     }
-    
+
 //     return res.json(newContent);
 // }
 
 const addContent = (req, res) => {
-    const findContent = typeId => name => MaybeA.of(() => Content.findOne({where: {typeId, name}}))
-    const createContent = typeId => name => ( (content = new Content({typeId, name})) => MaybeA.of(() => content.save()) )()
+    const findContent = typeId => name => MaybeA.of(() => Content.findOne({ where: { typeId, name } }))
+    const createContent = typeId => name => ((content = new Content({ typeId, name })) => MaybeA.of(() => content.save()))()
     const getContent = id => MaybeA.of(() => Content.findByPk(id))
 
     const [typeId, name] = props(["typeId", "name"])(req.body)
-    const newContent = 
-        MaybeA.joinM(Maybe.pure(findContent).ap(typeId).ap(name)).chain(cnt => 
-        MaybeA.guard(isNull(cnt)).concat(
-        MaybeA.joinM(Maybe.pure(createContent).ap(typeId).ap(name)).chain(nCnt => 
-        MaybeA.joinM(Maybe.pure(getContent).ap(prop("id")(nCnt)))
-        )))
+    const newContent =
+        MaybeA.joinM(Maybe.pure(findContent).ap(typeId).ap(name)).chain(cnt =>
+            MaybeA.guard(isNull(cnt)).concat(
+                MaybeA.joinM(Maybe.pure(createContent).ap(typeId).ap(name)).chain(nCnt =>
+                    MaybeA.joinM(Maybe.pure(getContent).ap(prop("id")(nCnt)))
+                )))
 
     // const triangles = 
     //     ListM.range(1, 10).chain(c =>
@@ -354,12 +354,12 @@ const addContent = (req, res) => {
     //     )))))
     //     .toList()
 
-    newContent.fromPromise(x => res.json(x), () => res.status(400).json({msg: "Error al agregar el contenido"}))
+    newContent.fromPromise(x => res.json(x), () => res.status(400).json({ msg: "Error al agregar el contenido" }))
     // res.json(triangles)
 }
 
 // Update menu
-const updateContent = async(req, res) => {
+const updateContent = async (req, res) => {
     const { id } = req.params;
 
     // Check if content exists
@@ -371,23 +371,23 @@ const updateContent = async(req, res) => {
 
     const { name } = req.body;
     content.name = name;
-    
+
     await content.save();
 
     let newContent;
-    try{
+    try {
         newContent = await Content.findByPk(content.id);
     } catch {
         const error = new Error("Error desconocido al actualizar el contenido");
         return res.status(400).json({ msg: error.message });
     }
-    
+
     return res.json(newContent);
 };
 
 // Remove content
 const removeContent = async (req, res) => {
-    
+
     const { id } = req.params;
 
     // Check if content exists
@@ -411,7 +411,7 @@ const removeContent = async (req, res) => {
 // Types
 const getTypes = async (req, res) => {
     let type;
-    try{
+    try {
         type = await Type.findAll();
     } catch {
         const error = new Error("Error desconocido al obtener los tipos");
@@ -423,7 +423,7 @@ const getTypes = async (req, res) => {
 // Meals
 const getMeals = async (req, res) => {
     let meal;
-    try{
+    try {
         meal = await Meal.findAll();
     } catch {
         const error = new Error("Error desconocido al obtener las comidas");
@@ -435,9 +435,9 @@ const getMeals = async (req, res) => {
 // Organizations
 const getOrganizations = async (req, res) => {
     let organization;
-    try{
+    try {
         organization = await Organization.findAll({
-            attributes: {exclude: ["description", "createdAt", "updatedAt"]},
+            attributes: { exclude: ["description", "createdAt", "updatedAt"] },
         });
     } catch {
         const error = new Error("Error desconocido al obtener las comidas");

@@ -1,18 +1,29 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv"
 
-export const transporter = nodemailer.createTransport({
-    host: "smtp.centronutricionalrodriguez.com",
-    port: 465,
+// Env variables
+dotenv.config();
+
+let transporter;
+if (process.env.ENABLE_SMTP !== "FALSE") {
+  transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
     secure: true,
     auth: {
-      user: "no-reply",
-      pass: "qwerty$1234",
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASSWORD,
     },
     tls: {
       rejectUnauthorized: false
     }
-});
+  });
 
-transporter.verify().then( () => {
+  transporter.verify().then(() => {
     console.log("Listo para enviar correos");
-})
+  })
+} else {
+  transporter = {}
+}
+
+export { transporter }
