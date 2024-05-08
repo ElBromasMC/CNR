@@ -1,29 +1,31 @@
 FROM node:22-alpine AS builder
 
+ENV NODE_ENV=production
+
 WORKDIR /app
 
+# Frontend env variables
 ARG VITE_BACKEND_URL=http://localhost:8080
 ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
 ENV PUBLIC_URL=/menu
 
-# Build react app
-COPY package.json package-lock.json ./
-RUN npm install --omit=dev
+# Frontend build dependencies
+WORKDIR /app/frontend
+COPY frontend/package.json frontend/package-lock.json ./
+RUN npm ci
 
-COPY go.mod go.sum ./
-RUN go mod download
+# Webserver dependencies
+WORKDIR /app/webserver
+COPY webserver/package.json webserver/package-lock.json ./
+RUN npm ci --omit=dev
 
-COPY . .
+# Build frontend
+WORKDIR /app/frontend
+COPY frontend/ ./
+RUN npm run build
 
-RUN make ./build/server
-
-# Deploy the application binary into a lean image
-FROM node:22-alpine
-
-WORKDIR /
-
-COPY --from=builder /app/build/server /server
-
+# Copy and run the webserver
+WORKDIR /app/webserver
+COPY webserver/ ./
 EXPOSE 8080
-
-ENTRYPOINT ["/server"]
+CMD [ "node", "index.js" ]
