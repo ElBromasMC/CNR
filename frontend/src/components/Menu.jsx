@@ -123,8 +123,7 @@ const Menu = () => {
                 <Comida />
                 <div className="card__content">
                     {!isEmpty(saveMenu) && !isEmpty(contents) &&
-                        // (new Map([[1, [7]], [2, [2, 3, 4, 5]], [3, [8]]])).get(menu[2]).sort((a, b) => a - b).map(i => {
-                        (new Map([[1, [7]], [2, []], [3, []]])).get(menu[2]).sort((a, b) => a - b).map(i => {
+                        (new Map([[1, [7]], [2, [2, 3, 4, 5]], [3, [8]]])).get(menu[2]).sort((a, b) => a - b).map(i => {
                             return (
                                 <div key={i}>
                                     <h4 className="field__title">
