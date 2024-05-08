@@ -12,7 +12,7 @@ ENV PUBLIC_URL=/menu
 # Frontend build dependencies
 WORKDIR /app/frontend
 COPY frontend/package.json frontend/package-lock.json ./
-RUN npm ci
+RUN npm ci --include=dev
 
 # Webserver dependencies
 WORKDIR /app/webserver
