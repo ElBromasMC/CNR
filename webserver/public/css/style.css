@@ -12,7 +12,7 @@ body {
     color: black;
 }
 
-.header{
+.header {
     position: relative;
     z-index: 999999;
 }
@@ -29,7 +29,7 @@ body {
     border-bottom: 1px solid black;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: 
+    grid-template-areas:
         "left logo right";
 }
 
@@ -87,7 +87,7 @@ body {
 .header .header__wrapper .header__header .header__logo a img {
     position: absolute;
     bottom: 0;
-    width: 10em;
+    width: 8.5rem;
 }
 
 
@@ -191,7 +191,7 @@ main .content .bg-image:before {
     width: 100%;
     height: 100%;
     opacity: 0.75;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 9;
 }
 
@@ -225,6 +225,7 @@ main .content .bg-image .bg-image__text .text__title {
     margin: 0;
     margin-bottom: 0.25em;
 }
+
 main .content .bg-image .bg-image__text .text__content {
     font-size: 2em;
 }
@@ -241,6 +242,7 @@ main .content .bg-image .bg-image__text .text__content {
         left: 5%;
         right: 5%;
     }
+
     main .content .bg-image .bg-image__text .text__content {
         font-size: 1.5em;
     }
@@ -297,7 +299,7 @@ main .content .about .about__wrapper .about__content .about__about .about__about
     font-weight: 700;
 }
 
-main .content .about .about__wrapper .about__content .about__about > .divisor{
+main .content .about .about__wrapper .about__content .about__about>.divisor {
     border-bottom: 3px solid #FDB822;
     width: 9em;
 }
@@ -549,7 +551,7 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 1.25em;
-    grid-template-areas: 
+    grid-template-areas:
         "name name name"
         "email email cellphone"
         "subject subject subject"
@@ -557,7 +559,7 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
         "accept accept accept";
 }
 
-main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * {
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs>* {
     display: flex;
     flex-direction: column;
 }
@@ -565,18 +567,23 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
 main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__name {
     grid-area: name;
 }
+
 main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__email {
     grid-area: email;
 }
+
 main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__cellphone {
     grid-area: cellphone;
 }
+
 main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__subject {
     grid-area: subject;
 }
+
 main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__message {
     grid-area: message;
 }
+
 main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs .input__accept {
     grid-area: accept;
     flex-direction: row;
@@ -593,13 +600,13 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
     color: #20A6FF;
 }
 
-main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > * {
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs>*>* {
     display: block;
     box-sizing: border-box;
 }
 
-main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > input:not([type=checkbox]),
-main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > textarea {
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs>*>input:not([type=checkbox]),
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs>*>textarea {
     width: 100%;
     font-family: "Nunito", sans-serif;
     font-size: 1em;
@@ -610,12 +617,12 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
     outline: none;
 }
 
-main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > input:not([type=checkbox]):focus,
-main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > textarea:focus {
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs>*>input:not([type=checkbox]):focus,
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs>*>textarea:focus {
     border: 1px solid #6EB74C;
 }
 
-main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs > * > input[type=checkbox] {
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__form .form__inputs>*>input[type=checkbox] {
     margin: 0;
     width: 1.5em;
     height: 1.5em;
@@ -626,7 +633,7 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
     outline: 0;
     border: 0;
     text-align: center;
-    padding: 0,4375em 1em;
+    padding: 0, 4375em 1em;
     margin-top: 1.25em;
     min-height: 2.25em;
     min-width: 12em;
@@ -685,7 +692,7 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
     gap: 0.1em;
 }
 
-main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .aside__content .content__data > * {
+main .content .contact .contact__wrapper .contact__content .contact__contact .contact__aside .aside__content .content__data>* {
     display: block;
 }
 
@@ -707,7 +714,7 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: 1.25em;
-        grid-template-areas: 
+        grid-template-areas:
             "name"
             "email"
             "cellphone"
@@ -737,7 +744,8 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
     gap: 20px;
     justify-content: center;
 }
-.footer .info > div {
+
+.footer .info>div {
     display: flex;
     flex-basis: 20%;
     gap: 3px;
@@ -799,13 +807,13 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
     align-items: center;
 }
 
-.footer .foot > * {
+.footer .foot>* {
     flex-basis: 13.34%;
     text-align: center;
 }
 
 .footer .foot .foot__img img {
-    width: 9em;
+    width: 8.5rem;
 }
 
 
@@ -818,7 +826,7 @@ main .content .contact .contact__wrapper .contact__content .contact__contact .co
     color: rgb(100, 100, 100);
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1000px) {
     .footer .info {
         flex-direction: column;
     }

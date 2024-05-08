@@ -10,12 +10,12 @@ import { Type } from "../models/Type.js";
 dotenv.config();
 
 // Database conection
-db.authenticate()
+await db.authenticate()
     .then(() => console.log('Base de datos conectada'))
     .catch(error => console.log(error))
 
 // Sync database
-db.sync()
+await db.sync()
     .then(() => console.log('Base de datos reconfigurada'))
     .catch(error => console.log(error))
 

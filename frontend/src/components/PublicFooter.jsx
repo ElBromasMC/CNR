@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 
 const PublicFooter = () => {
     return (
-        <footer className='public'> 
+        <footer className='public'>
             <div className="info">
-                <div> 
+                <div>
                     <h5>
                         Dónde estamos
                     </h5>
@@ -17,23 +17,23 @@ const PublicFooter = () => {
                         Av. Alfonso Ugarte 524,<br />Cercado de Arequipa - Arequipa.
                     </a>
                 </div>
-                <div> 
+                <div>
                     <h5>
                         Llámanos
                     </h5>
                     <a href="#">
-                        <i className="fa fa-phone" /> 
+                        <i className="fa fa-phone" />
                         &nbsp;Celular: 983 503 728
                     </a>
                     <a href="#">
-                        <i className="fa fa-phone" /> 
+                        <i className="fa fa-phone" />
                         &nbsp;Celular: 942 849 532
                     </a>
                     <a href="#">
                         Te llamamos nosotros
                     </a>
                 </div>
-                <div> 
+                <div>
                     <h5>
                         Escríbanos
                     </h5>
@@ -41,7 +41,7 @@ const PublicFooter = () => {
                         Por correo electrónico
                     </a>
                 </div>
-                <div> 
+                <div>
                     <h5>
                         Síguenos
                     </h5>
@@ -53,11 +53,11 @@ const PublicFooter = () => {
                     </div>
                 </div>
             </div>
-            <div className="foot"> 
+            <div className="foot">
                 <div>
-                    <img src="/menu/images/logo-2.png" alt="Centro Nutricional Rodríguez" style={{width: '150px'}} />
+                    <img src="/menu/images/logo-2.png" alt="Centro Nutricional Rodríguez" style={{ width: '8.5rem' }} />
                 </div>
-                <a href="#">© Copyright 2022</a>
+                <a href="#">© Copyright 2024</a>
                 <a href="#">Aviso Legal</a>
                 <a href="#">Política de privacidad</a>
                 <a href="#">Política de cookies</a>

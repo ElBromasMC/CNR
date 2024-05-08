@@ -52,8 +52,5 @@ services:
       - "traefik.http.routers.webserver.tls.options=default"
       - "traefik.http.services.webserver.loadbalancer.server.port=8080"
       - "traefik.http.services.webserver.loadbalancer.server.scheme=http"
-    depends_on:
-      db:
-        condition: service_healthy
 volumes:
   db-data:

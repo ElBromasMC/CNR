@@ -27,7 +27,7 @@ ADMIN_EMAIL=hello@example.com
 ADMIN_PASSWORD=password
 ```
 
-### Docker .env file example
+## Docker .env file example
 ```shell
 DB_NAME=cnre
 DB_USER=user
@@ -43,4 +43,10 @@ MAIL_TO=
 JWT_SECRET=random_string
 ADMIN_EMAIL=hello@example.com
 ADMIN_PASSWORD=password
+```
+
+## Docker build
+```shell
+$ docker build -t <username>/<name> --build-arg VITE_BACKEND_URL=$VITE_BACKEND_URL .
+$ docker push <username>/<name>
 ```

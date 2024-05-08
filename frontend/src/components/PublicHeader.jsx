@@ -4,10 +4,10 @@ const PublicHeader = () => {
     return (
         <header className='public'>
             <div className="info">
-                <div style={{fontWeight: '600',}}>
+                <div style={{ fontWeight: '600', }}>
                     Nutricionistas especializados con estándares de calidad
                 </div>
-                <div style={{width: '5%',}}></div>
+                <div style={{ width: '5%', }}></div>
                 <div className="icons">
                     <a href="https://www.facebook.com/Centro-Nutricional-Rodriguez-102559994841758" target="_blank">
                         <i className="fa-brands fa-facebook-f fa-lg"></i>
@@ -19,7 +19,7 @@ const PublicHeader = () => {
                         <i className="fa-brands fa-whatsapp fa-lg"></i>
                     </a>
                 </div>
-                <div className="divisor" style={{borderLeft: '1px solid #42657F',}}></div>
+                <div className="divisor" style={{ borderLeft: '1px solid #42657F', }}></div>
                 <div className="cellphone">
                     <i className="fa-solid fa-mobile-screen-button"></i>
                     &nbsp;Cel.: 983503728 / 942849532
@@ -31,7 +31,7 @@ const PublicHeader = () => {
             </div>
             <nav>
                 <Link className="center" to="/">
-                    <img src="/menu/images/logo-1.png" alt="Centro Nutricional Rodriguez" style={{width: '245px',}} />
+                    <img src="/menu/images/logo-1.png" alt="Centro Nutricional Rodriguez" style={{ width: '12.5rem', }} />
                 </Link>
             </nav>
         </header>
