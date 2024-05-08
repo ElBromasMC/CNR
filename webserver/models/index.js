@@ -1,5 +1,5 @@
 import db from "../config/db.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 import { User } from "./User.js";
 import { Organization } from "./Organization.js";
@@ -28,7 +28,7 @@ User.beforeValidate(async (user, options) => {
 // Relationships
 // Group has many Users
 Group.hasMany(User, {
-    foreignKey:{
+    foreignKey: {
         allowNull: false,
         defaultValue: 2,
     }
@@ -42,7 +42,7 @@ User.belongsTo(Organization);
 // Organization has many Menus
 Organization.hasMany(Menu);
 Menu.belongsTo(Organization, {
-    foreignKey:{
+    foreignKey: {
         allowNull: false,
         defaultValue: 1,
     }
@@ -50,7 +50,7 @@ Menu.belongsTo(Organization, {
 
 // Meal has many Menus
 Meal.hasMany(Menu, {
-    foreignKey:{
+    foreignKey: {
         allowNull: false,
     }
 });
@@ -62,7 +62,7 @@ Content.belongsToMany(Menu, { through: "MenuContent" })
 
 // Type has many Contents
 Type.hasMany(Content, {
-    foreignKey:{
+    foreignKey: {
         allowNull: false,
     }
 });
@@ -76,7 +76,7 @@ Testimonial.belongsTo(User);
 
 // Menu has many Testimonials
 Menu.hasMany(Testimonial, {
-    foreignKey:{
+    foreignKey: {
         allowNull: false,
     }
 });

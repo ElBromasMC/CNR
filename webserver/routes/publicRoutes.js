@@ -1,7 +1,11 @@
 import path from "path";
+import dotenv from "dotenv";
 import express from "express";
 import multer from "multer";
 import { transporter } from "../config/mailer.js";
+
+// Load .env variables
+dotenv.config();
 
 // ES6 dirname
 const __dirname = import.meta.dirname;
@@ -32,8 +36,8 @@ router.post("/contact", multer().array(), async (req, res) => {
     try {
         // Send email
         await transporter.sendMail({
-            from: '"Página web" <no-reply@centronutricionalrodriguez.com>',
-            to: "ventas@centronutricionalrodriguez.com",
+            from: `"Página web" <${process.env.SMTP_USER}>`,
+            to: process.env.MAIL_TO,
             subject: `${subject}`,
             html: `
             <span><strong>Nombre: </strong>${name}</span>
@@ -45,7 +49,8 @@ router.post("/contact", multer().array(), async (req, res) => {
             <span><strong>Mensaje: </strong>${message}</span>
             `,
         });
-    } catch {
+    } catch (error) {
+        console.log(error)
         return res.status(400).json({
             msg: "Error al enviar el formulario"
         })
