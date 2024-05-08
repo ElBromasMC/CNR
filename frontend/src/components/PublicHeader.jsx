@@ -26,7 +26,7 @@ const PublicHeader = () => {
                 </div>
                 <div>
                     <i className="fa-solid fa-envelope"></i>
-                    &nbsp;ventas@centronutricionalrodriguez.com
+                    &nbsp;nativas.ventasaqp@gmail.com
                 </div>
             </div>
             <nav>
